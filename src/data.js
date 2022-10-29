@@ -4,20 +4,19 @@ import iconShare from 'assets/share.png'
 import iconZuri from 'assets/zuri.png'
 import iconI4g from 'assets/I4G.png'
 import iconDots from 'assets/dots.png'
-import iconSlack from 'assets/share.png'
+import iconSlack from 'assets/slack.png'
 import IconGithub from 'assets/github.png'
 import IconCamera from 'assets/camera.png'
 
 //Props
 export const data = {
-  name: 'Kl3va',
   shareIcon: iconShare,
   zuriIcon: iconZuri,
-  ingressive: iconI4g,
+  ingressiveIcon: iconI4g,
   dotIcon: iconDots,
-  slackIcon: iconSlack,
-  githubIcon: IconGithub,
   cameraIcon: IconCamera,
+  footerText: 'HNG Internship 9 Frontend Task',
+  socials: [iconSlack, IconGithub],
   profile: {
     id: 'profile__img',
     img: profileImg,

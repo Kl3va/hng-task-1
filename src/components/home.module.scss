@@ -1,0 +1,129 @@
+@use 'GlobalStyles/variable.scss' as *;
+
+.container {
+  max-width: min(91%, 76rem);
+  margin-inline: auto;
+  margin-block: 2.75rem 2rem;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__icon1,
+.header__icon2 {
+  padding: 1.19rem 0.83rem;
+  border: 1px dashed $dark-grey;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $dark-grey;
+  }
+}
+
+.header__icon1 {
+  @media only screen and (min-width: $breakpoint-mid) {
+    display: none;
+  }
+}
+
+.header__icon2 {
+  display: none;
+
+  @media only screen and (min-width: $breakpoint-mid) {
+    display: flex;
+    margin-right: 20%;
+  }
+}
+
+.profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__Img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    height: 100%;
+  }
+
+  &__edit {
+    justify-self: center;
+    align-self: end;
+    z-index: 5;
+    visibility: hidden;
+  }
+}
+
+.list {
+  margin-block: 2rem 3rem;
+  @media only screen and (min-width: $breakpoint-large) {
+    //width: ;
+  }
+
+  &__link {
+    list-style-type: none;
+    margin-bottom: 1.5rem;
+
+    a {
+      display: block;
+      width: 100%;
+      background-color: $light-grey;
+      border-radius: 0.5rem;
+      padding: 1.5rem 0;
+      text-decoration: none;
+      text-align: center;
+      color: $light-black;
+      font-weight: $font-weight-small;
+
+      &:hover {
+        background-color: $dark-grey;
+      }
+
+      &:visited {
+        border: 1px solid $darker-grey;
+      }
+
+      &:focus {
+        border: 1px solid $darker-grey;
+      }
+    }
+  }
+}
+
+.section__socials {
+  margin-bottom: 4rem;
+}
+
+.socials {
+  display: flex;
+  margin-inline: auto;
+  justify-content: space-between;
+  width: 4rem;
+}
+
+.footer {
+  border-top: 1px solid $dark-grey;
+  padding-top: 2rem;
+
+  @media only screen and (min-width: $breakpoint-mid) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & > *:not(:last-child) {
+    margin-bottom: 1rem;
+
+    @media only screen and (min-width: $breakpoint-mid) {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    color: $lighter-grey;
+  }
+}

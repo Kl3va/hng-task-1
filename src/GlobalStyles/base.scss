@@ -3,13 +3,18 @@
 //Typography
 
 h1 {
-  font-size: 1.25rem;
-  font-weight: inherit;
+  //font-size: 1.25rem;
+  font-weight: $font-weight-large;
+  margin-top: 1.5rem;
 }
 
 p {
   font-size: 0.75rem;
-  font-weight: $font-weight-small;
+  //font-weight: $font-weight-small;
+}
+
+.main {
+  margin-top: -1.5rem;
 }
 
 *,
@@ -56,11 +61,25 @@ picture {
 
 .packed {
   display: grid;
+  width: 5.5rem;
+  height: 5.5rem;
 
   & > * {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
+
+  &:hover > :first-child {
+    filter: brightness(50%);
+  }
+
+  &:hover > :last-child {
+    visibility: visible;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 body {

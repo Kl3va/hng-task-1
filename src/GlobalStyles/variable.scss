@@ -6,6 +6,7 @@ $light-grey: #eaecf0;
 $dark-grey: #d0d5dd;
 $darker-grey: #98a2b3;
 $light-black: #101828;
+$lighter-grey: #667085;
 
 //Font-family
 $font-secondary: 'Inter', sans-serif;
@@ -15,5 +16,6 @@ $font-weight-large: 700;
 $font-weight-small: 500;
 
 //Breakpoints
+$breakpoint-small: 500px;
 $breakpoint-mid: 43.75em; //700px
 $breakpoint-large: 62.5em; //1000px
