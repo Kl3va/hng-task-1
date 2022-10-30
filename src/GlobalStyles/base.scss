@@ -3,20 +3,15 @@
 //Typography
 
 h1 {
-  //font-size: 1.25rem;
   font-weight: $font-weight-large;
   margin-top: 1.5rem;
 }
 
 p {
   font-size: 0.75rem;
-  //font-weight: $font-weight-small;
 }
 
-.main {
-  margin-top: -1.5rem;
-}
-
+//CSS resets
 *,
 *::before,
 *::after {
@@ -44,21 +39,11 @@ picture {
   display: block;
 }
 
-/*.btn {
-  width: 100%;
-  background-color: $red;
-  margin-bottom: 1.5rem;
-  color: $white;
-  padding: 0.93rem 0;
-  border: none;
-  border-radius: 0.3rem;
+.main {
+  margin-top: -1.5rem;
+}
 
-  &:hover {
-    background-color: $white;
-    color: $color-primary;
-  }
-}*/
-
+//For Stacking child elements on each other
 .packed {
   display: grid;
   width: 5.5rem;
@@ -80,6 +65,10 @@ picture {
 
 .hidden {
   display: none;
+}
+
+.show {
+  display: block;
 }
 
 body {

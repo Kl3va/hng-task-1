@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from 'components/home.module.scss'
+import Subtext from 'components/Subtext'
+import { useGlobalContext } from 'context'
 
 const Home = ({
   shareIcon,
@@ -12,6 +14,19 @@ const Home = ({
   socials,
   links,
 }) => {
+  const { openSubtext, closeSubtext } = useGlobalContext()
+  let offset
+  const showSubtext = (e) => {
+    const title = e.target.textContent
+    const anchor = e.target.getBoundingClientRect()
+    offset = window.pageYOffset
+    console.log(anchor, offset)
+    const center = (anchor.left + anchor.right) / 2
+    const bottom = anchor.bottom + offset - 1
+
+    openSubtext(title, { center, bottom })
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -48,7 +63,12 @@ const Home = ({
             <ul className={styles.list}>
               {links.map(({ id, text, link }, index) => {
                 return (
-                  <li className={styles.list__link} key={index}>
+                  <li
+                    className={styles.list__link}
+                    key={index}
+                    onMouseOver={showSubtext}
+                    onMouseOut={closeSubtext}
+                  >
                     <a href={link} id={id}>
                       {text}
                     </a>
@@ -73,6 +93,7 @@ const Home = ({
             <img src={ingressiveIcon} alt='ingressive' />
           </div>
         </footer>
+        <Subtext />
       </div>
     </>
   )

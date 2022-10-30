@@ -16,6 +16,7 @@
   padding: 1.19rem 0.83rem;
   border: 1px dashed $dark-grey;
   border-radius: 50%;
+  transition: all ease-out 0.3s;
 
   &:hover {
     background-color: $dark-grey;
@@ -80,6 +81,7 @@
       text-align: center;
       color: $light-black;
       font-weight: $font-weight-small;
+      transition: all ease-in 0.3s;
 
       &:hover {
         background-color: $dark-grey;
@@ -99,6 +101,10 @@
 .section__socials {
   margin-bottom: 4rem;
 }
+
+/*.section__links {
+  position: relative;
+}*/
 
 .socials {
   display: flex;
@@ -128,4 +134,32 @@
   p {
     color: $lighter-grey;
   }
+}
+
+//Stylig for subText
+.subtext {
+  background: $color-primary;
+  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: none;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s linear;
+}
+.subtext::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid $color-primary;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
 }

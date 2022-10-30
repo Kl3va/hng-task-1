@@ -33,31 +33,39 @@ export const data = {
     {
       id: '',
       text: 'Twitter Profile',
+      description: 'My twitter profile',
       link: 'https://twitter.com/_Kl3va_',
     },
     {
       id: 'btn__zuri',
       text: 'Zuri Team',
+      description: 'Zuri team page',
       link: 'https://training.zuri.team/',
     },
     {
       id: 'books',
       text: 'Zuri Books',
+      description: 'Books on design and coding from the zuri team',
       link: 'http://books.zuri.team ',
     },
     {
       id: 'book__python',
       text: 'Python Books',
+      description:
+        'Grab a copy of this python for beginners book. Available at a discount for early birds',
       link: 'https://books.zuri.team/python-for-beginners?ref_id=Kl3va',
     },
     {
       id: 'pitch',
       text: 'Background Check For Coders',
+      description:
+        'Test your coding skills and knowledge using this amazing tool',
       link: 'https://background.zuri.team',
     },
     {
       id: 'book__design',
       text: 'Design Books',
+      description: 'Here is the best book on design from your favorite, zuri',
       link: 'https://books.zuri.team/design-rules',
     },
   ],
