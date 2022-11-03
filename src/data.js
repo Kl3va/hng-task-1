@@ -68,5 +68,11 @@ export const data = {
       description: 'Here is the best book on design from your favorite, zuri',
       link: 'https://books.zuri.team/design-rules',
     },
+    {
+      id: 'contact',
+      text: 'Contact',
+      description: 'You can contact me by following this link',
+      link: '/contact',
+    },
   ],
 }
