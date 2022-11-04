@@ -5,11 +5,8 @@ import { useGlobalContext } from 'context'
 
 const Home = ({
   shareIcon,
-  zuriIcon,
-  ingressiveIcon,
   dotIcon,
   cameraIcon,
-  footerText,
   profile: { id, img, twitter, slack },
   socials,
   links,
@@ -52,7 +49,9 @@ const Home = ({
                   className={styles.profile__edit}
                 />
               </div>
-              <h1 id={twitter.id}>{twitter.user}</h1>
+              <h1 className={styles.heading} id={twitter.id}>
+                {twitter.user}
+              </h1>
               <p className='hidden' id={slack.id}>
                 {slack.user}
               </p>
@@ -86,13 +85,6 @@ const Home = ({
             </div>
           </section>
         </main>
-        <footer>
-          <div className={styles.footer}>
-            <img src={zuriIcon} alt='zuri' />
-            <p>{footerText}</p>
-            <img src={ingressiveIcon} alt='ingressive' />
-          </div>
-        </footer>
         <Subtext />
       </div>
     </>

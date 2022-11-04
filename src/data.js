@@ -76,3 +76,43 @@ export const data = {
     },
   ],
 }
+
+export const contactData = {
+  heading: 'Contact Me',
+  headerText: 'Hi there, contact me to ask me about anything you have in mind.',
+  checkboxText:
+    'You agree to providing your data to {name} who may contact you.',
+
+  btnInfo: {
+    text: 'Send message',
+    id: 'btn__submit',
+  },
+  inputFirstName: {
+    label: 'First name',
+    placeholder: 'Enter your first name',
+    hint: 'Please enter your first name',
+    name: 'firstName',
+    id: 'first_name',
+  },
+  inputLastName: {
+    label: 'Last name',
+    placeholder: 'Enter your last name',
+    hint: 'Please enter your last name',
+    name: 'lastName',
+    id: 'last_name',
+  },
+  inputEmail: {
+    label: 'Email',
+    placeholder: 'yourname@email.com',
+    hint: 'Please enter your email',
+    name: 'email',
+    id: 'email',
+  },
+  inputMultiText: {
+    label: 'Message',
+    placeholder: "Send me a message and I'll reply you as soon as possible...",
+    hint: 'Please enter a message',
+    name: 'message',
+    id: 'message',
+  },
+}

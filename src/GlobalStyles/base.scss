@@ -4,11 +4,6 @@
 
 h1 {
   font-weight: $font-weight-large;
-  margin-top: 1.5rem;
-}
-
-p {
-  font-size: 0.75rem;
 }
 
 //CSS resets
@@ -69,6 +64,10 @@ picture {
 
 .show {
   display: block;
+}
+
+.go-back {
+  width: 1.5rem;
 }
 
 body {
