@@ -14,10 +14,10 @@ const Home = ({
   const { openSubtext, closeSubtext } = useGlobalContext()
   let offset
   const showSubtext = (e) => {
+    //Getting the text, container dimensions for anchors, distance between scrolled n top of page
     const title = e.target.textContent
     const anchor = e.target.getBoundingClientRect()
     offset = window.pageYOffset
-    console.log(anchor, offset)
     const center = (anchor.left + anchor.right) / 2
     const bottom = anchor.bottom + offset - 1
 

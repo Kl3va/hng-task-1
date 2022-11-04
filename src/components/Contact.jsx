@@ -36,7 +36,7 @@ const Contact = ({
                     placeholder={inputFirstName.placeholder}
                     className={styles.input__text}
                   />
-                  <p className={styles.hint}>{inputFirstName.hint}</p>
+                  {/*<p className={styles.hint}>{inputFirstName.hint}</p>*/}
                 </div>
 
                 <div className={styles.Inputwrapper}>
@@ -48,7 +48,7 @@ const Contact = ({
                     placeholder={inputLastName.placeholder}
                     className={styles.input__text}
                   />
-                  <p className={styles.hint}>{inputLastName.hint}</p>
+                  {/*<p className={styles.hint}>{inputLastName.hint}</p>*/}
                 </div>
               </div>
 
@@ -61,7 +61,7 @@ const Contact = ({
                   placeholder={inputEmail.placeholder}
                   className={styles.input__text}
                 />
-                <p className={styles.hint}>{inputEmail.hint}</p>
+                {/*<p className={styles.hint}>{inputEmail.hint}</p>*/}
               </div>
 
               <div className={styles.Inputwrapper}>
@@ -72,8 +72,9 @@ const Contact = ({
                   cols='20'
                   rows='4'
                   placeholder={inputMultiText.placeholder}
+                  className={styles.multitext}
                 ></textarea>
-                <p className={styles.hint}>{inputEmail.hint}</p>
+                {/*<p className={styles.hint}>{inputEmail.hint}</p>*/}
               </div>
 
               <div className={styles.checkboxWrapper}>
