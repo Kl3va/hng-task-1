@@ -81,7 +81,7 @@ export const contactData = {
   heading: 'Contact Me',
   headerText: 'Hi there, contact me to ask me about anything you have in mind.',
   checkboxText:
-    'You agree to providing your data to kl3va who may contact you.',
+    'You agree to providing your data to Ikwunze Kelvin who may contact you.',
 
   btnInfo: {
     text: 'Send message',

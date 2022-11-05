@@ -55,13 +55,25 @@
   font-size: 0.87rem;
 }
 
-.input__text,
-.multitext {
+input[type='text'],
+input[type='email'],
+textarea {
   width: 100%;
   border: none;
   padding: 0.65rem 0.875rem;
   border: 1px solid $dark-grey;
   border-radius: 0.5rem;
+
+  &:onblur {
+    &:invalid {
+      border: 1px solid $error;
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px $error;
+
+      & + .hint {
+        display: block;
+      }
+    }
+  }
 
   &:focus {
     border: 1px solid $light-blue;
@@ -87,10 +99,47 @@
   gap: 0.75rem;
 }
 
-.checked {
+/*.checked {
   align-self: flex-start;
   width: 1.25rem;
   height: 1.25rem;
+}*/
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $color-primary;
+  margin: 0;
+  font: inherit;
+  color: $light-blue;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  border: 0.15rem solid $dark-grey;
+  border-radius: 0.15rem;
+  display: block;
+  transform: translateY(-0.075rem);
+
+  display: grid;
+  place-content: center;
+
+  &::before {
+    content: '';
+    width: 0.65rem;
+    height: 0.65rem;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1rem 1rem $lighter-blue;
+
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:checked {
+    border: 0.15rem solid $light-blue;
+  }
 }
 
 .checkboxText {
@@ -106,12 +155,16 @@
   border: none;
   transition: all ease-in 0.2s;
 
-  &:hover {
+  &:disabled {
+    background-color: #b2ddff;
+  }
+
+  &:hover:enabled {
     background-color: $lighter-blue;
   }
 }
 
 .hint {
   color: $error;
-  display: none;
+  //display: none;
 }

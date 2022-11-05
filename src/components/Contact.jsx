@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from 'components/contact.module.scss'
 
 import goBack from 'assets/back.png'
+import { useNavigate } from 'react-router-dom'
 
 const Contact = ({
   heading,
@@ -13,10 +14,65 @@ const Contact = ({
   inputEmail,
   inputMultiText,
 }) => {
+  const navigate = useNavigate()
+
+  const [user, setUser] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+  })
+
+  const [touched, setTouched] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    message: false,
+  })
+
+  const handleChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setUser({ ...user, [name]: value })
+  }
+
+  const [isChecked, setIsChecked] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (
+      user.firstName &&
+      user.firstName &&
+      user.email &&
+      user.message &&
+      isChecked
+    ) {
+      setUser({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: '',
+      })
+      setTouched({
+        firstName: false,
+        lastName: false,
+        email: false,
+        message: false,
+      })
+      setIsChecked(false)
+    }
+
+    /* else if (!user.lastName) {
+      setTouched({ ...touched, lastName: true })
+    } else {
+      setTouched({ ...touched, lastName: false })
+    }*/
+  }
+
   return (
     <>
       <aside className='go-back'>
-        <img src={goBack} alt='go to home page' />
+        <img src={goBack} alt='go to home page' onClick={() => navigate('/')} />
       </aside>
       <div className={styles.contact}>
         <header className={styles.header}>
@@ -25,7 +81,7 @@ const Contact = ({
         </header>
         <main className={styles.main}>
           <section className={styles.form__wrapper}>
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.text__wrapper}>
                 <div className={styles.Inputwrapper}>
                   <label className={styles.label}>{inputFirstName.label}</label>
@@ -34,9 +90,19 @@ const Contact = ({
                     name={inputFirstName.name}
                     id={inputFirstName.id}
                     placeholder={inputFirstName.placeholder}
-                    className={styles.input__text}
+                    className={`${
+                      touched.firstName && !user.firstName
+                        ? 'inputEmpty'
+                        : `${styles.input__text}`
+                    }`}
+                    onChange={handleChange}
+                    onBlur={() => setTouched({ ...touched, firstName: true })}
+                    value={user.firstName}
+                    required
                   />
-                  <p className={styles.hint}>{inputFirstName.hint}</p>
+                  {touched.firstName && !user.firstName ? (
+                    <p className={styles.hint}>{inputFirstName.hint}</p>
+                  ) : null}
                 </div>
 
                 <div className={styles.Inputwrapper}>
@@ -46,9 +112,19 @@ const Contact = ({
                     name={inputLastName.name}
                     id={inputLastName.id}
                     placeholder={inputLastName.placeholder}
-                    className={styles.input__text}
+                    className={`${
+                      touched.lastName && !user.lastName
+                        ? 'inputEmpty'
+                        : `${styles.input__text}`
+                    }`}
+                    onChange={handleChange}
+                    onBlur={() => setTouched({ ...touched, lastName: true })}
+                    value={user.lastName}
+                    required
                   />
-                  <p className={styles.hint}>{inputLastName.hint}</p>
+                  {touched.lastName && !user.lastName ? (
+                    <p className={styles.hint}>{inputLastName.hint}</p>
+                  ) : null}
                 </div>
               </div>
 
@@ -59,9 +135,19 @@ const Contact = ({
                   name={inputEmail.name}
                   id={inputEmail.id}
                   placeholder={inputEmail.placeholder}
-                  className={styles.input__text}
+                  className={`${
+                    touched.email && !user.email
+                      ? 'inputEmpty'
+                      : `${styles.input__text}`
+                  }`}
+                  onChange={handleChange}
+                  onBlur={() => setTouched({ ...touched, email: true })}
+                  value={user.email}
+                  required
                 />
-                <p className={styles.hint}>{inputEmail.hint}</p>
+                {touched.email && !user.email ? (
+                  <p className={styles.hint}>{inputEmail.hint}</p>
+                ) : null}
               </div>
 
               <div className={styles.Inputwrapper}>
@@ -72,9 +158,19 @@ const Contact = ({
                   cols='20'
                   rows='4'
                   placeholder={inputMultiText.placeholder}
-                  className={styles.multitext}
+                  className={`${
+                    touched.message && !user.message
+                      ? 'inputEmpty'
+                      : `${styles.multiText}`
+                  }`}
+                  onChange={handleChange}
+                  onBlur={() => setTouched({ ...touched, message: true })}
+                  value={user.message}
+                  required
                 ></textarea>
-                <p className={styles.hint}>{inputEmail.hint}</p>
+                {touched.message && !user.message ? (
+                  <p className={styles.hint}>{inputMultiText.hint}</p>
+                ) : null}
               </div>
 
               <div className={styles.checkboxWrapper}>
@@ -82,16 +178,21 @@ const Contact = ({
                   type='checkbox'
                   name='checkbox'
                   className={styles.checked}
+                  reqired
+                  checked={isChecked}
+                  onChange={() => setIsChecked(!isChecked)}
                 />
                 <p className={styles.checkboxText}>{checkboxText}</p>
               </div>
 
-              <input
-                type='button'
-                value={btnInfo.text}
+              <button
+                type='submit'
                 id={btnInfo.id}
+                disabled={!isChecked}
                 className={styles.btn}
-              />
+              >
+                {btnInfo.text}
+              </button>
             </form>
           </section>
         </main>
