@@ -104,7 +104,7 @@ export const contactData = {
   inputEmail: {
     label: 'Email',
     placeholder: 'yourname@email.com',
-    hint: 'Please enter your email',
+    hint: 'Please enter a valid email',
     name: 'email',
     id: 'email',
   },
