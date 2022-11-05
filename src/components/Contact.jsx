@@ -173,17 +173,31 @@ const Contact = ({
                 ) : null}
               </div>
 
-              <div className={styles.checkboxWrapper}>
+              {/* <div className={styles.checkboxWrapper}>
+                <label htmlFor='checkbox'></label>
                 <input
                   type='checkbox'
                   name='checkbox'
+                  id='checkbox'
                   className={styles.checked}
                   reqired
                   checked={isChecked}
                   onChange={() => setIsChecked(!isChecked)}
                 />
                 <p className={styles.checkboxText}>{checkboxText}</p>
-              </div>
+              </div>*/}
+              <label className={styles.checkboxWrapper} htmlFor='checkbox'>
+                <input
+                  type='checkbox'
+                  name='checkbox'
+                  id='checkbox'
+                  className={styles.checked}
+                  reqired
+                  checked={isChecked}
+                  onChange={() => setIsChecked(!isChecked)}
+                />
+                {checkboxText}
+              </label>
 
               <button
                 type='submit'
